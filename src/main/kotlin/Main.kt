@@ -24,6 +24,8 @@ fun main() = application {
             AppContent()
         }
     }
+
+    println("Hello!!@!@!@!@!@!@!")
 }
 
 @Composable
