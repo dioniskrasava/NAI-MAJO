@@ -1,7 +1,14 @@
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -34,6 +41,7 @@ fun main() = application {
 fun AppContent() {
     Box(modifier = Modifier.fillMaxSize()) {
         drawWeekSquares(55f, 10f)
+
     }
 }
 
@@ -61,9 +69,12 @@ fun drawWeekSquares(
         var posY = startY
 
 
-        for (i in 1..7){
+        val week = makeDaysObjects() // создаем объект недели
+
+        // пробегаемся по массиву дней и рисуем квадратики
+        for (i in week){
             drawRect(
-                color = Color.Gray,
+                color = i.color,
                 topLeft = Offset(posX, posY),
                 size = Size(sizeRect, sizeRect)
             )
@@ -72,4 +83,22 @@ fun drawWeekSquares(
         }
 
     }
+}
+
+
+// создаем объект недели для тестирования
+fun makeDaysObjects() : Array<Day>{
+
+    // ПЕРЕПИШИ ОБЪЕКТЫ В ТАКОМ ФОРМАТЕ. ЦВЕТ БУДЕТ СЧИТАТЬСЯ АВТОМАТИЧЕСКИ
+    val day0 = createDay(1,  DateValue(2026,1, 29), 5)
+
+    val day1 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.1f))
+    val day2 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.2f))
+    val day3 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.3f))
+    val day4 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.4f))
+    val day5 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.5f))
+    val day6 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.6f))
+    val day7 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.7f))
+
+    return arrayOf(day1, day2, day3, day4, day5, day6, day7)
 }
