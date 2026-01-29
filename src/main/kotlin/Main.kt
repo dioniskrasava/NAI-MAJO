@@ -1,24 +1,32 @@
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Divider
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.LineHeightStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-
 
 
 fun main() = application {
@@ -30,7 +38,7 @@ fun main() = application {
         state = windowState
     ) {
         MaterialTheme {
-            AppContent()
+            AppContent2()
         }
     }
 
@@ -42,6 +50,27 @@ fun AppContent() {
     Box(modifier = Modifier.fillMaxSize()) {
         drawWeekSquares(55f, 10f)
 
+
+        // Кнопка в правом верхнем углу
+        Button(
+            onClick = { /* обработка клика */ },
+            modifier = Modifier
+                .align(Alignment.TopEnd)
+                .padding(16.dp) // отступ от краев
+        ) {
+            Text("Кнопка")
+        }
+
+    }
+}
+
+/** Д Л Я    Т Е С Т И Р О В А Н И Я     П О З И Ц И О Н И Р О В А Н И Я*/
+@Composable
+fun AppContent2() {
+    Row(Modifier.fillMaxWidth()) {
+        Text("Левая часть", Modifier.weight(1f)) // Занет 1 часть пространства
+        Divider(Modifier.width(10.dp).fillMaxHeight())
+        Text("Правая часть", Modifier.weight(2f)) // Занет 2 части пространства (в 2 раза шире)
     }
 }
 
@@ -90,15 +119,13 @@ fun drawWeekSquares(
 fun makeDaysObjects() : Array<Day>{
 
     // ПЕРЕПИШИ ОБЪЕКТЫ В ТАКОМ ФОРМАТЕ. ЦВЕТ БУДЕТ СЧИТАТЬСЯ АВТОМАТИЧЕСКИ
-    val day0 = createDay(1,  DateValue(2026,1, 29), 5)
-
-    val day1 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.1f))
-    val day2 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.2f))
-    val day3 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.3f))
-    val day4 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.4f))
-    val day5 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.5f))
-    val day6 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.6f))
-    val day7 = Day(1, DateValue(2026,1, 29), 5, Color(0f,0.5f,0f, 0.7f))
+    val day1 = createDay(1,  DateValue(2026,1, 29), -1)
+    val day2 = createDay(1,  DateValue(2026,1, 29), 0)
+    val day3 = createDay(1,  DateValue(2026,1, 29), 10)
+    val day4 = createDay(1,  DateValue(2026,1, 29), 20)
+    val day5 = createDay(1,  DateValue(2026,1, 29), 30)
+    val day6 = createDay(1,  DateValue(2026,1, 29), 40)
+    val day7 = createDay(1,  DateValue(2026,1, 29), 50)
 
     return arrayOf(day1, day2, day3, day4, day5, day6, day7)
 }
