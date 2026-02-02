@@ -1,13 +1,14 @@
 package ui.components
 
+import DateValue
+import Day
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import makeDaysObjects
-
+import createDay
 
 /** Рисует вертикальный ряд из 7 квадратов, представляющих неделю.
  *
@@ -46,4 +47,20 @@ fun drawWeekSquares(
         }
 
     }
+}
+
+
+// создаем объект недели для тестирования
+fun makeDaysObjects() : Array<Day>{
+
+    // ПЕРЕПИШИ ОБЪЕКТЫ В ТАКОМ ФОРМАТЕ. ЦВЕТ БУДЕТ СЧИТАТЬСЯ АВТОМАТИЧЕСКИ
+    val day1 = createDay(1,  DateValue(2026,1, 29), -1)
+    val day2 = createDay(1,  DateValue(2026,1, 29), 0)
+    val day3 = createDay(1,  DateValue(2026,1, 29), 10)
+    val day4 = createDay(1,  DateValue(2026,1, 29), 20)
+    val day5 = createDay(1,  DateValue(2026,1, 29), 30)
+    val day6 = createDay(1,  DateValue(2026,1, 29), 40)
+    val day7 = createDay(1,  DateValue(2026,1, 29), 50)
+
+    return arrayOf(day1, day2, day3, day4, day5, day6, day7)
 }

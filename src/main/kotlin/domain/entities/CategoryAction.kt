@@ -1,5 +1,7 @@
 package domain.entities
 
+import java.util.Collections.emptyList
+
 /**
  * Категория активности
  *
@@ -8,8 +10,8 @@ package domain.entities
  * @param name название активности
  * */
 data class CategoryAction(
-    val id:   Long,
+    val id:   Int,
     var name: String,
-    var iconResId: String?, // название ресурса иконки (для UI)
+    //var iconResId: String?, // название ресурса иконки (для UI)
     val actionList: List<Action> = emptyList() // активности данной категории
 )

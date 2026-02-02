@@ -13,29 +13,13 @@ fun main() = application {
 
     Window(
         onCloseRequest = ::exitApplication,
-        title = "Три квадрата",
+        title = "NAI-MAJO",
         state = windowState
     ) {
         MaterialTheme {
-            SquaresAndButtonsScreen()
+            SquaresAndButtonsScreen() // тестовый экран с квадратиками и кнопкой
         }
     }
 }
 
-
-
-// создаем объект недели для тестирования
-fun makeDaysObjects() : Array<Day>{
-
-    // ПЕРЕПИШИ ОБЪЕКТЫ В ТАКОМ ФОРМАТЕ. ЦВЕТ БУДЕТ СЧИТАТЬСЯ АВТОМАТИЧЕСКИ
-    val day1 = createDay(1,  DateValue(2026,1, 29), -1)
-    val day2 = createDay(1,  DateValue(2026,1, 29), 0)
-    val day3 = createDay(1,  DateValue(2026,1, 29), 10)
-    val day4 = createDay(1,  DateValue(2026,1, 29), 20)
-    val day5 = createDay(1,  DateValue(2026,1, 29), 30)
-    val day6 = createDay(1,  DateValue(2026,1, 29), 40)
-    val day7 = createDay(1,  DateValue(2026,1, 29), 50)
-
-    return arrayOf(day1, day2, day3, day4, day5, day6, day7)
-}
 

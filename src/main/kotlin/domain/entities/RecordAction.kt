@@ -1,8 +1,14 @@
 package domain.entities
 
+/**
+ * Запись произошедшего события
+ *
+ *
+ * */
 data class RecordAction(
     val id:             Int,
-    var name:           String,
+    val actionId:       Int,
     var action:         Action,
+    val value:         Double,
     var categoryAction: CategoryAction
 )

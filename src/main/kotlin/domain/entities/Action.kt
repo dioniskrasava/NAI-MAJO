@@ -9,10 +9,10 @@ package domain.entities
  *
  * */
 data class Action(
-    val id:       Long,
-    var name:     String,
-    var category: CategoryAction,
-    var unit:     String,
+    val id:         Int,
+    var name:       String,
+    var categoryId: Int,
+    var unit:       String,
 ){
 
     /* При инициализации объекта активности мы проверяем чтобы name не было пустым, иначе выбрасываем исключение */
