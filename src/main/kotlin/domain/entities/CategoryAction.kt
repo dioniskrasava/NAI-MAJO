@@ -9,5 +9,7 @@ package domain.entities
  * */
 data class CategoryAction(
     val id:   Long,
-    var name: String
+    var name: String,
+    var iconResId: String?, // название ресурса иконки (для UI)
+    val actionList: List<Action> = emptyList() // активности данной категории
 )

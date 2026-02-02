@@ -3,6 +3,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import domain.entities.Action
+import domain.entities.CategoryAction
 import ui.screen.SquaresAndButtonsScreen
 
 
@@ -36,3 +38,4 @@ fun makeDaysObjects() : Array<Day>{
 
     return arrayOf(day1, day2, day3, day4, day5, day6, day7)
 }
+

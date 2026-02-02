@@ -13,4 +13,12 @@ data class Action(
     var name:     String,
     var category: CategoryAction,
     var unit:     String,
-)
+){
+
+    /* При инициализации объекта активности мы проверяем чтобы name не было пустым, иначе выбрасываем исключение */
+    init {
+        if (name.isBlank()){
+            throw IllegalArgumentException("Action name cannot be blank")
+        }
+    }
+}
