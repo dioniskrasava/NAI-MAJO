@@ -4,12 +4,15 @@ import domain.entities.Action
 import domain.repository.ActionRepository
 
 class InMemoryActionRepository : ActionRepository{
+
+    private val actions = mutableListOf<Action>()
+
     override fun saveAction(action: Action) {
-        TODO("Not yet implemented")
+        actions.add(action)
     }
 
     override fun getActionById(id: Int): Action? {
-        TODO("Not yet implemented")
+        return actions.find { it.id == id }
     }
 
     override fun getActionsByCategory(category: String): List<Action> {
