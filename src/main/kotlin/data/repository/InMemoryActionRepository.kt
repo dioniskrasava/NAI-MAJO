@@ -1,9 +1,9 @@
-package domain.implRepository
+package data.repository
 
 import domain.entities.Action
 import domain.repository.ActionRepository
 
-class InMemoryActionRepository : ActionRepository{
+class InMemoryActionRepository : ActionRepository {
 
     private val actions = mutableListOf<Action>()
 
