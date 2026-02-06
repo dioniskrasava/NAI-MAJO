@@ -4,10 +4,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import cli.cliRun
 import domain.entities.Action
 import domain.entities.CategoryAction
 import ui.screen.SquaresAndButtonsScreen
 import java.awt.Dimension
+
+/*
+
+// GUI на КОМПОСЕ (ПОКА ОТКЛЮЧЕН)
 
 
 fun main() = application {
@@ -28,5 +33,9 @@ fun main() = application {
         }
     }
 }
+*/
 
-
+fun main(){
+    // Запускаем работу приложения через консоль
+    cliRun()
+}
